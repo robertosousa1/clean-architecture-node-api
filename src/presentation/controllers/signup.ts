@@ -4,7 +4,12 @@ import { badRequest } from '../helpers/http-helper'
 
 export class SignUpController {
   handle (httpRequest: HttpRequest): HttpResponse {
-    const requiredFields = ['name', 'email', 'passoword']
+    const requiredFields = [
+      'name',
+      'email',
+      'passoword',
+      'passowordConfirmation'
+    ]
 
     for (const field of requiredFields) {
       if (!httpRequest.body[field]) {
